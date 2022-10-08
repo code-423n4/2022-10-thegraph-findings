@@ -1,4 +1,8 @@
-# Natspec errors 
+# 1.Non-library/interface files should use fixed compiler versions, not floating ones
+
+=================================
+
+# 2.Natspec errors 
 
 There are 9 instances of this issue:
 
@@ -40,7 +44,7 @@ There are 9 instances of this issue:
 
 ===========================
 
-#Constants should be named in all caps
+# 3.Constants should be named in all caps
 
 There are 2 instances of this issue:
 
@@ -55,7 +59,7 @@ There are 2 instances of this issue:
 
 ==================
 
-# EVENT IS MISSING INDEXED FIELDS
+# 4.EVENT IS MISSING INDEXED FIELDS
 ## Each event should use three indexed fields if there are three or more fields
 
 There are 2instances of this issue:
@@ -93,7 +97,7 @@ There are 2instances of this issue:
 
 ==================
 
-# Require() should be used instead of assert()
+# 5.Require() should be used instead of assert()
 Prior to solidity version 0.8.0, hitting an assert consumes the remainder of the transaction’s available gas rather than returning it, as require()/revert() do. assert() should be avoided even past solidity version 0.8.0 as its documentation states that “The assert function creates an error of type Panic(uint256). … Properly functioning code should never create a Panic, not even on invalid external input. If this happens, then there is a bug in your contract which you should fix”.use require/revert
 
 
@@ -111,7 +115,7 @@ Prior to solidity version 0.8.0, hitting an assert consumes the remainder of th
 
 ================================
 
-## THE NONREENTRANT MODIFIER SHOULD OCCUR BEFORE ALL OTHER MODIFIERS
+## 6.THE NONREENTRANT MODIFIER SHOULD OCCUR BEFORE ALL OTHER MODIFIERS
 
 ### file: L2GraphTokenGateway.sol
 
