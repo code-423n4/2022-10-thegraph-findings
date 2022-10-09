@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "cccz",
+  "risk": "2",
+  "title": "L2GraphTokenGateway#finalizeInboundTransfer: Should check whether _to is destroyed",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/45"
+}
