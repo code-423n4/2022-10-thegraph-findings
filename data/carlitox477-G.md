@@ -1,0 +1,30 @@
+# Multiple access to state variables can be avoided
+* [Governed#transferOwnership](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L46) can be changed to ```emit NewPendingOwnership(oldPendingGovernor, _newGovernor);```
+* [Governed#acceptOwnership](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L65) can be changed to ```emit NewOwnership(oldGovernor, oldPendingGovernor);```. In this particular case, move [this line](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L60) to the start of the function, and replace every instance of ```pendingGovernor``` for ```oldPendingGovernor```, except from [this line](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L63). Also replace [this line](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L66) for ```emit NewPendingOwnership(oldPendingGovernor, address(0));```
+* [Pausable#_setPartialPaused](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Pausable.sol#L34) can be replaced for ```emit PartialPauseChanged(_toPause);```; and [this line](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Pausable.sol#L31) can be replaced for ```if (_toPause) {```
+* [Pausable#_setPaused](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Pausable.sol#L48) can be replaced for ```emit PauseChanged(_toPause);```; and [this line](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Pausable.sol#L45) can be replaced for ```if (_toPause) {```
+* [Pausable#_setPauseGuardian](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Pausable.sol#L58) can be replaced for ```emit NewPauseGuardian(oldPauseGuardian, newPauseGuardian);```
+* [L2GraphTokenGateway#outboundTransfer](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/gateway/L2GraphTokenGateway.sol#L145) [access twice](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/gateway/L2GraphTokenGateway.sol#L156) to state variable ```l1GRT```
+* [L2GraphTokenGateway#finalizeInboundTransfer](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/gateway/L1GraphTokenGateway.sol#L273) [access twice](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/gateway/L1GraphTokenGateway.sol#L276) to state variable ```escrow```
+
+
+# Splitting require() statements that use && saves gas
+See [this issue](https://github.com/code-423n4/2022-01-xdefi-findings/issues/128) which describes the fact that there is a larger deployment gas cost, but with enough runtime calls, the change ends up being cheaper by 3 gas.
+
+Instances found:
+* [Governed#acceptOwnership](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Governed.sol#L55) 
+
+# Internal/private functions called once can be avoided to save gas
+Not inlining costs 20 to 40 gas because of two extra JUMP instructions and additional stack operations needed for function calls.
+* [Managed#notPartialPaused](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L43) is called just once by ```modifier notPartialPaused()```
+* [Managed#_notPaused](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L48) is called just once by ```modifier _notPaused()```
+* [Managed#_onlyController()](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L56) is called just once by ```modifier onlyController()```
+* [GraphTokenUpgradeable#_getChainID](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/token/GraphTokenUpgradeable.sol#L195) is called once in ```_initialize``` function
+
+# Inline hashing can be put in immutable variables to avoid calculation
+* [Managed#curation](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L114) can avoid calculate ```keccak256("Curation")``` by putting its value in an immutable variable
+* [Managed#epochManager](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L122) can avoid calculate ```keccak256("EpochManager")``` by putting its value in an immutable variable
+* [Managed#rewardsManager](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L130) can avoid calculate ```keccak256("RewardsManager")``` by putting its value in an immutable variable
+* [Managed#staking](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L138) can avoid calculate ```keccak256("Staking")``` by putting its value in an immutable variable
+* [Managed#graphToken](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L146) can avoid calculate ```keccak256("GraphToken")``` by putting its value in an immutable variable
+* [Managed#graphTokenGateway](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/governance/Managed.sol#L154) can avoid calculate ```keccak256("GraphTokenGateway")``` by putting its value in an immutable variable
