@@ -1,0 +1,7 @@
+# [NON-CRITICAL] public functions not called by contract should be declared external
+* [GraphProxyAdmin#acceptProxy](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/upgrades/GraphProxyAdmin.sol#L86)
+
+# [NON-CRITICAL] Expressions for constant values such as call to keccak256(), should use immutable rather than constant
+While it doesn’t save any gas because the compiler knows that developers often make this mistake, it’s still best to use the right tool for the task at hand. There is a difference between constant variables and immutable variables, and they should each be used in their appropriate contexts. constants should be used for literal values written into the code, and immutable variables should be used for expressions, or values calculated in, or passed into the constructor.
+
+Change [GraphTokenUpgradeable](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/token/GraphTokenUpgradeable.sol#L34-L39) ([this too](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/token/GraphTokenUpgradeable.sol#L42-L45)) constants to immutable
