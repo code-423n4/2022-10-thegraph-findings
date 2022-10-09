@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "carlitox477",
+  "risk": "3",
+  "title": "Unchecked transfer/transferFrom return can lead to protocol lose of funds",
+  "issueId": 47,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/47"
+}
