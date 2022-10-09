@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "cccz",
+  "risk": "2",
+  "title": "L1GraphTokenGateway#outboundTransfer: Should check callhookWhitelist[to] instead of callhookWhitelist[msg.sender]",
+  "issueId": 46,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/46"
+}
