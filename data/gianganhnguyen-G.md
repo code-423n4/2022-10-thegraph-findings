@@ -47,3 +47,12 @@ Comparing to a constant (`true` or `false`) is a bit more expensive than directl
                     extraData.length == 0 || callhookWhitelist[msg.sender] == true,
                     "CALL_HOOK_DATA_NOT_ALLOWED"
                 );
+
+# 7. [G-7] Storage: Emitting storage values
+
+The values emitted shouldn't be read from storage. The existing memory values should be used instead in here:
+
+    File contracts/l2/token/L2GraphToken.sol, line 61-62:   
+            gateway = _gw;
+            emit GatewaySet(gateway); // I suggest: emit GatewaySet(_gw);
+    
