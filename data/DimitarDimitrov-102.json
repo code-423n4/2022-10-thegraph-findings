@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "DimitarDimitrov",
+  "risk": "2",
+  "title": "Contract can be paused or unpaused without event emitting",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/102"
+}
