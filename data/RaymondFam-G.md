@@ -1,5 +1,13 @@
 ## Non-strict inequalities are cheaper than strict ones
-In the EVM, there is no opcode for non-strict inequalities (>=, <=) and two operations are performed (> + = or < + =). As an example, consider replacing <= with the strict counterpart < in the following line of code:
+In the EVM, there is no opcode for non-strict inequalities (>=, <=) and two operations are performed (> + = or < + =). As an example, consider replacing >= with the strict counterpart > in the following line of code:
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L224
+
+```
+        require(msg.value > expectedEth - 1, "WRONG_ETH_VALUE");
+```
+
+Similarly, as an example, consider replacing <= with the strict counterpart < in the following line of code:
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L95
 
