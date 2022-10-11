@@ -92,4 +92,22 @@ A storage pointer is cheaper since copying a state struct in memory would incur 
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L229
 
+## Using Booleans Costs More Storage Overhead
+According to Openzeppelin's `ReentrancyGuard.sol`:
 
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/58f635312aa21f947cae5f8578638a85aa2519f5/contracts/security/ReentrancyGuard.sol#L23-L27
+
+    // Booleans are more expensive than uint256 or any type that takes up a full
+    // word because each write operation emits an extra SLOAD to first read the
+    // slot's contents, replace the bits taken up by the boolean, and then write
+    // back. This is the compiler's defense against contract upgrades and
+    // pointer aliasing, and it cannot be disabled.
+
+Consider using uint256(1) and uint256(2) for true/false to avoid repeated:
+
+1. Gwarmaccess that would cost 100 gas for a warm account or storage access, and
+2. Gsset that would cost 20,000 gas for an SSTORE operation switching the storage value to non-zero from zero, i.e, ‘false’ to ‘true’.
+
+Here are some of the instances entailed:
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Pausable.sol#L6-L10
