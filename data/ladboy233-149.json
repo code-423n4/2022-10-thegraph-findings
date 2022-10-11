@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "initialize function in L2GraphToken.sol, BridgeEscrow.sol, L2GraphTokenGateway.sol, L1GraphTokenGateway.sol can be invoked multiple times from the implementation contract.",
+  "issueId": 149,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/149"
+}
