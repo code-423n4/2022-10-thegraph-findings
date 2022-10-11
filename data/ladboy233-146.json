@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "Address.isContract(_pendingImplementation) restriction can be bypassed",
+  "issueId": 146,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/146"
+}
