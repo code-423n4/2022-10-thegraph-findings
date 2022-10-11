@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Rahoz",
+  "risk": "3",
+  "title": "Ignores return value from finalizeInboundTransfer",
+  "issueId": 141,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/141"
+}
