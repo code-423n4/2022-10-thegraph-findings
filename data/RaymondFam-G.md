@@ -113,6 +113,7 @@ Here are some of the instances entailed:
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Pausable.sol#L6-L10
 
 ## Split Require Statements Using &&
-Instead of using the `&&` operator in a single require statement to check multiple conditions, using multiple require statements with 1 condition per require statement will save 3 GAS per `&&`. Here is one of the instances entailed:
+Instead of using the `&&` operator in a single require statement to check multiple conditions, using multiple require statements with 1 condition per require statement will save 3 GAS per `&&`. Here are some of the instances entailed:
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L142-L145
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L142
