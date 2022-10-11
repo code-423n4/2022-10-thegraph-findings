@@ -31,3 +31,16 @@ Despite not saving any gas, it’s part of the best practices to adopt `immutabl
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L34-L39
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L42-L45
 
+## `block.timestamp` Unreliable
+`_setPartialPaused()` and `_setPaused()` in `Pausable.sol` uses `block.timestamp` as part of its time checks. Nevertheless, timestamps can be slightly altered by miners/validators to favor them in contracts that have logic strongly dependent on them.
+
+Consider taking into account this issue and warning the users that such a scenario could happen. If the alteration of timestamps cannot affect the protocol in any way, consider documenting the reasoning and writing tests enforcing that these guarantees will be preserved even if the code changes in the future.
+
+## Typo Mistake
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L14
+
+```
+ @ send
+ * like upgrading a contract or changing the admin needs to be send through
+```
+
