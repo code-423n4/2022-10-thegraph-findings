@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "IllIllI",
+  "risk": "2",
+  "title": "`_safeMint()` should be used rather than `_mint()`, or NFTs may be lost",
+  "issueId": 115,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/115"
+}
