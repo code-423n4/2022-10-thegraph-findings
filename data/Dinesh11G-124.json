@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Dinesh11G",
+  "risk": "3",
+  "title": "The arithmetic operator can overflow",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/124"
+}
