@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": " Compromised address of the Arbitrum Gateway Router on L1 can bridge the GRT token onbehalf of the victim to L2, Compromised Arbitrum Gateway Router on L2 can burn GRT token in L2 onbehalf of the victim and mint GRT token in L1",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/152"
+}
