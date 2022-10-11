@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "User is likely to either overpay or underpay the ETH gas when transferring GRT from L1 to L2 because supplying the right gas parameter is too complicated for average user",
+  "issueId": 151,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/151"
+}
