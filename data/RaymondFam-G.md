@@ -117,3 +117,21 @@ Instead of using the `&&` operator in a single require statement to check multip
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L142-L145
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L142
+
+## Event Emission of Storage Variables Causes More Gas
+Emit cached variables instead of state variables whenever possible. Here are some of the instances entailed:
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Governed.sol#L46
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Governed.sol#L65-L66
+
+For instance, line 46 of `Governed.sol` should be refactored as follows to save gas:
+
+```
+        emit NewPendingOwnership(oldPendingGovernor, _newGovernor);
+```
+Similarly, lines 65-66 should also be refactored to the following:
+
+```
+        emit NewOwnership(oldGovernor, msg.sender);
+        emit NewPendingOwnership(oldPendingGovernor, address(0));
+```
