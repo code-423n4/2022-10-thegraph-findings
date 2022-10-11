@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "8olidity",
+  "risk": "2",
+  "title": "bypass isContract()",
+  "issueId": 112,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/112"
+}
