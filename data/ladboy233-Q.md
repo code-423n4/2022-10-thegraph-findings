@@ -1,3 +1,37 @@
+## transferFrom return value not handled
+
+https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/gateway/L1GraphTokenGateway.sol#L235
+
+```solidity
+                token.transferFrom(from, escrow, _amount);
+```
+
+## Use __ERC20Burnable_init instead of __ERC20_init in GraphTokenUpgradeable.sol
+
+https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/token/GraphTokenUpgradeable.sol#L151
+
+The contract GraphTokenUpgradeable.sol inherits 
+
+ERC20BurnableUpgradeable
+
+```solidity
+contract GraphTokenUpgradeable is GraphUpgradeable, Governed, ERC20BurnableUpgradeable {
+```
+
+however, the function
+
+```solidity
+  __ERC20_init
+```
+
+is called,
+
+we recommend the project change the call to
+
+```solidity
+  __ERC20Burnable_init
+```
+
 ## Use updated openzeppelin version 
 
 The openzeppelin version used is outdated.
