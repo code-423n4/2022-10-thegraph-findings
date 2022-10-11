@@ -1,3 +1,12 @@
+## Use updated openzeppelin version 
+
+The openzeppelin version used is outdated.
+
+```solidity
+    "@openzeppelin/contracts": "^3.4.1",
+    "@openzeppelin/contracts-upgradeable": "3.4.2",
+```
+
 ## Use updated solidity version
 
 The updated solidity version is 0.8.17
