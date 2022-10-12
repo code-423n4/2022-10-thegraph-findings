@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "corerouter",
+  "risk": "2",
+  "title": "The token bridging transaction may be stuck in the bridge.",
+  "issueId": 195,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/195"
+}
