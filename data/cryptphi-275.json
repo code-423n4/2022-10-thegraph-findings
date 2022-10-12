@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "cryptphi",
+  "risk": "3",
+  "title": "Using ifAdmin modifier to forcefully interact with implementation contracts via _fallback() call.",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/275"
+}
