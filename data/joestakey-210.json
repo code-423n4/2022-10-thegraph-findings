@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "joestakey",
+  "risk": "2",
+  "title": "Fungibility of `GRT` can be affected by `burn()`",
+  "issueId": 210,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/210"
+}
