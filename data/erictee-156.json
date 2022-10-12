@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "erictee",
+  "risk": "2",
+  "title": "Token transfers do not verify that the tokens were successfully transferred",
+  "issueId": 156,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/156"
+}
