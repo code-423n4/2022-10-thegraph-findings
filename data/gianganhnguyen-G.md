@@ -48,11 +48,23 @@ Comparing to a constant (`true` or `false`) is a bit more expensive than directl
                     "CALL_HOOK_DATA_NOT_ALLOWED"
                 );
 
-# 7. [G-7] Storage: Emitting storage values
+# 7. [G-7] Storage: Emitting or returning storage values
 
-The values emitted shouldn't be read from storage. The existing memory values should be used instead in here:
+The values emitted or values returned shouldn't be read from storage. The existing memory values should be used instead in here:
 
     File contracts/l2/token/L2GraphToken.sol, line 61-62:   
             gateway = _gw;
             emit GatewaySet(gateway); // I suggest: emit GatewaySet(_gw);
-    
+
+    File contracts/rewards/RewardsManager.sol, line 338-340:   
+            subgraph.accRewardsForSubgraph = getAccRewardsForSubgraph(_subgraphDeploymentID);
+            subgraph.accRewardsPerSignalSnapshot = accRewardsPerSignal;
+            return subgraph.accRewardsForSubgraph;
+            // Here I suggest code:
+            // uint256 accRewardsForSubgraph = getAccRewardsForSubgraph(_subgraphDeploymentID);
+            // subgraph.accRewardsForSubgraph = accRewardsForSubgraph;
+            // subgraph.accRewardsPerSignalSnapshot = accRewardsPerSignal;
+            // return accRewardsForSubgraph;
+      
+    File contracts/rewards/RewardsManager.sol, line 363:   
+            return subgraph.accRewardsPerAllocatedToken; // I suggest: return accRewardsPerAllocatedToken;
