@@ -135,3 +135,14 @@ Similarly, lines 65-66 should also be refactored to the following:
         emit NewOwnership(oldGovernor, msg.sender);
         emit NewPendingOwnership(oldPendingGovernor, address(0));
 ```
+## Use Custom Errors Instead of Require to Save Gas
+Consider using Solidity 0.8.4 and above and replacing all require statements with custom errors which are cheaper both in deployment and runtime cost. Custom errors save about 50 gas each time they’re hit by not needing to allocate and store the revert string. Additionally, not defining the strings also save deployment gas.
+
+Please visit the following link for additional details:
+
+https://blog.soliditylang.org/2021/04/21/custom-errors/
+
+Here are some of the instances entailed:
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/gateway/L2GraphTokenGateway.sol#L69-L72
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L275
