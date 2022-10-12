@@ -18,7 +18,7 @@ Add the following line: `require(_initGovernor) != address(0)`
 
 Instance: https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L199
 
-2. It is a good programming practice to use constants instead of magic numbers
+3. It is a good programming practice to use constants instead of magic numbers
 
 - https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L33
 - https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L46
