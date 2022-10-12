@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "zzzitron",
+  "risk": "2",
+  "title": "`L1GraphTokenGateway:onlyL2Counterpart` does not check whether l2Counterpart is initialized",
+  "issueId": 201,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/201"
+}
