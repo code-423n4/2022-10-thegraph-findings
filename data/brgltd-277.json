@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "brgltd",
+  "risk": "2",
+  "title": "Signature can be reused across forks due to lack of chainid validation",
+  "issueId": 277,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/277"
+}
