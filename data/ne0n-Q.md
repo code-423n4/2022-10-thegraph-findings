@@ -13,6 +13,11 @@ Note: While this is an internal function, the caller of the function also does n
 Mitigation: 
 Add the following line: `require(_initGovernor) != address(0)`
 
+2. Avoid assembly whenever required
+`assembly{ id := chainid() }` => `uint256 id = block.chainid`
+
+Instance: https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L199
+
 2. It is a good programming practice to use constants instead of magic numbers
 
 - https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L33
