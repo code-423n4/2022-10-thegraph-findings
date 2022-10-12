@@ -38,6 +38,32 @@ L2GraphTokenGateway.sol:214:     * Note that whitelisted senders (some protocol 
 L2GraphTokenGateway.sol:217:     * never succeeds. This requires extra care when adding contracts to the whitelist, but is necessary to ensure that
 L2GraphTokenGateway.sol:224:     * @param _data Extra callhook data, only used when the sender is whitelisted
 ```
+## [N-3]  Use more recent version of solidity
+```solidity
+GraphTokenGateway.sol:3:pragma solidity ^0.7.6;
+L1GraphTokenGateway.sol:3:pragma solidity ^0.7.6;
+Managed.sol:3:pragma solidity ^0.7.6;
+BridgeEscrow.sol:3:pragma solidity ^0.7.6;
+GraphUpgradeable.sol:3:pragma solidity ^0.7.6;
+IGraphToken.sol:3:pragma solidity ^0.7.6;
+IController.sol:3:pragma solidity >=0.6.12 <0.8.0;
+GraphProxy.sol:3:pragma solidity ^0.7.6;
+IGraphProxy.sol:3:pragma solidity ^0.7.6;
+GraphTokenUpgradeable.sol:3:pragma solidity ^0.7.6;
+IStaking.sol:3:pragma solidity >=0.6.12 <0.8.0;
+Governed.sol:3:pragma solidity ^0.7.6;
+IGraphCurationToken.sol:3:pragma solidity ^0.7.6;
+ICuration.sol:3:pragma solidity ^0.7.6;
+IEpochManager.sol:3:pragma solidity ^0.7.6;
+GraphProxyStorage.sol:3:pragma solidity ^0.7.6;
+IStakingData.sol:3:pragma solidity >=0.6.12 <0.8.0;
+Pausable.sol:3:pragma solidity ^0.7.6;
+L2GraphToken.sol:3:pragma solidity ^0.7.6;
+IRewardsManager.sol:3:pragma solidity ^0.7.6;
+ICallhookReceiver.sol:9:pragma solidity ^0.7.6;
+GraphProxyAdmin.sol:3:pragma solidity ^0.7.6;
+L2GraphTokenGateway.sol:3:pragma solidity ^0.7.6;
+```
 # Low 
 ## [L-01] `abi.encodePacked()` should not be used with dynamic types when passing the result to a hash function such as `keccak256()`
 ```solidity
