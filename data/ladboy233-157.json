@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "GRT token sender's token balance can be locked in BridgeEscow if the cross chain transaction from L1 to L2 fails, expire (passing the retryable window) or cancelled by the receiver",
+  "issueId": 157,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/157"
+}
