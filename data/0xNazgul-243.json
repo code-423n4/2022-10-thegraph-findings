@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "0xNazgul",
+  "risk": "2",
+  "title": "[NAZ-M1] `GraphTokenUpgradeable.permit()` Should Always Check `recoveredAddress != 0`",
+  "issueId": 243,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/243"
+}
