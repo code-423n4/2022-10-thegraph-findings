@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "zzzitron",
+  "risk": "2",
+  "title": "`L2GraphToken` proxy owner cannot be relinquished (deviation from the spec)",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/200"
+}
