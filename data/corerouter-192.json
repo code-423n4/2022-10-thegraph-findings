@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "corerouter",
+  "risk": "2",
+  "title": "finalizeInboundTransfer() may have reentrant attacking risk",
+  "issueId": 192,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/192"
+}
