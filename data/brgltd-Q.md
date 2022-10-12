@@ -158,24 +158,7 @@ emit WithdrawalFinalized(_l1Token, _from, _to, 0, _amount);
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L276-L278
 
-# [09] Variable `expectedEth` can be removed
-
-Since the variable `expectedEth` is only used once. Hence, `maxSubmissionCost.add(_maxGas.mul(_gasPriceBid))` can be used directly inside the require statement.
-
-```
-uint256 expectedEth = maxSubmissionCost.add(_maxGas.mul(_gasPriceBid));
-require(msg.value >= expectedEth, "WRONG_ETH_VALUE");
-```
-
-https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L223-L224
-
-Can be replace to:
-
-```
-require(msg.value >= maxSubmissionCost.add(_maxGas.mul(_gasPriceBid)), "WRONG_ETH_VALUE");
-```
-
-# [10] `_pendingImplementation` is being showdowed
+# [09] `_pendingImplementation` is being showdowed
 
 The variable named `_pendingImplementation` is shadowing the function that it extracts its value from `GraphProxyStorage._pendingImplementation`. This won't cause a collision, but it will warn on linters/slither/extensions. Consider renaming the variable `_pendingImplementation` to ensure the project has the least amount of warnings from linter outputs.
 
@@ -185,7 +168,7 @@ address _pendingImplementation = _pendingImplementation();
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L140
 
-# [11] `GraphProxy` should inherit from `IGraxyProxy`
+# [10] `GraphProxy` should inherit from `IGraxyProxy`
 
 ```
 contract GraphProxy is GraphProxyStorage {
@@ -193,7 +176,7 @@ contract GraphProxy is GraphProxyStorage {
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L16
 
-# [12] Missing NATSPEC/documentation
+# [11] Missing NATSPEC/documentation
 
 Consider adding NATSPEC on all functions to improve documentation
 
@@ -203,7 +186,7 @@ function _notPartialPaused() internal view {
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Managed.sol#L43
 
-# [13] Replace memory with calldata for read-only referential function arguments
+# [12] Replace memory with calldata for read-only referential function arguments
 
 ```
 function parseOutboundData(bytes memory _data)
@@ -217,7 +200,7 @@ function _syncContract(string memory _name) internal {
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Managed.sol#L173
 
-# [14] Order of functions
+# [13] Order of functions
 
 The solidity [documentation](https://docs.soliditylang.org/en/v0.8.17/style-guide.html#order-of-functions) recommends the following order for functions:
 
@@ -256,7 +239,7 @@ function calculateL2TokenAddress(address _l1ERC20) external view override return
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L352
 
-# [15] Disallow updating the escrow with the current escrow
+# [14] Disallow updating the escrow with the current escrow
 
 Currently, it possible to generate an event `EscrowAddressSet` even if the `_escrow` argument is the same as the current `escrow` state variable. Generating an event in this case might cause confusion since it will be the same address.
 
@@ -272,7 +255,7 @@ https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1Gra
 
 Add a check ensuring that the `_escrow` argument does not equal the existing `escrow`.
 
-# [16] `GraphProxyAdmin.acceptProxy()` can be external instead of public
+# [15] `GraphProxyAdmin.acceptProxy()` can be external instead of public
 
 ```
 function acceptProxy(GraphUpgradeable _implementation, IGraphProxy _proxy) public onlyGovernor {
@@ -280,7 +263,7 @@ function acceptProxy(GraphUpgradeable _implementation, IGraphProxy _proxy) publi
 
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L86
 
-# [17] Replace assert with require or custom error
+# [16] Replace assert with require or custom error
 
 Assert should be avoided in production code. As described on the solidity [documentation](https://docs.soliditylang.org/en/v0.8.15/control-structures.html#panic-via-assert-and-error-via-require). "The assert function creates an error of type Panic(uint256). … Properly functioning code should never create a Panic, not even on invalid external input. If this happens, then there is a bug in your contract which you should fix."
 Even if the code is expected to be unreacheable, consider using a require statement or a custom error instead of assert.
@@ -292,4 +275,21 @@ File: contracts/upgrades/GraphProxy.sol
 47: assert(ADMIN_SLOT == bytes32(uint256(keccak256("eip1967.proxy.admin")) - 1));
 48: assert(
 51: assert(
+```
+
+# [17] Variable `expectedEth` can be removed
+
+The variable `expectedEth` is only used once. Hence, `maxSubmissionCost.add(_maxGas.mul(_gasPriceBid))` can be used directly inside the require statement.
+
+```
+uint256 expectedEth = maxSubmissionCost.add(_maxGas.mul(_gasPriceBid));
+require(msg.value >= expectedEth, "WRONG_ETH_VALUE");
+```
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L223-L224
+
+Can be replace to:
+
+```
+require(msg.value >= maxSubmissionCost.add(_maxGas.mul(_gasPriceBid)), "WRONG_ETH_VALUE");
 ```
