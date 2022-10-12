@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Trust",
+  "risk": "2",
+  "title": "After proposed 0.8.0 upgrade kicks in, L2 finalizeInboundTransfer might not work.",
+  "issueId": 289,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/289"
+}
