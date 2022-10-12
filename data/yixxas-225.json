@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "yixxas",
+  "risk": "2",
+  "title": "Use OpenZeppelin's safeTransferFrom instead of transferFrom when transferring ERC20 tokens",
+  "issueId": 225,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/225"
+}
