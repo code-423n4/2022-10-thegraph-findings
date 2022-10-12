@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Chom",
+  "risk": "2",
+  "title": "Daily bridge amount limit should be enforced to prevent bridge takeover due to a single bug. For example, Nomad hack.",
+  "issueId": 169,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/169"
+}
