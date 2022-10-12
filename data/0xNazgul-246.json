@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "0xNazgul",
+  "risk": "2",
+  "title": "[NAZ-M3] Use `safeTransfer()/safeTransferFrom()` instead of `transfer()/transferFrom()`",
+  "issueId": 246,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/246"
+}
