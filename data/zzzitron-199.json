@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "zzzitron",
+  "risk": "2",
+  "title": "`L1GraphTokenGateway`: whitelisted entity cannot use callhook via router",
+  "issueId": 199,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/199"
+}
