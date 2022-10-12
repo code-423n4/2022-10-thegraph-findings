@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "zzzitron",
+  "risk": "2",
+  "title": "`L1GraphTokenGateway`, `L2GraphTokenGateway` does not enforce to set all the necessary variables before unpause",
+  "issueId": 202,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/202"
+}
