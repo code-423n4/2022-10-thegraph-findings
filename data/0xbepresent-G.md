@@ -38,8 +38,11 @@ Require statements including conditions with the && operator can be broken down 
 
 ```
 contracts/gateway/L1GraphTokenGateway.sol#L142      require(_escrow != address(0) && Address.isContract(_escrow), "INVALID_ESCROW");
+contracts/upgrades/GraphProxy.sol#L143                     require(
+                                              _pendingImplementation != address(0) && msg.sender == _pendingImplementation,
 ```
 
 **Links:**
 
 [contracts/gateway/L1GraphTokenGateway.sol#L142](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/gateway/L1GraphTokenGateway.sol#L142)
+[contracts/upgrades/GraphProxy.sol#L143](https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/upgrades/GraphProxy.sol#L143)
