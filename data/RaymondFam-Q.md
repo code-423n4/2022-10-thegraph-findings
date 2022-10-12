@@ -56,3 +56,9 @@ Consider removing/rewriting these commented out lines of code. Alternatively, ha
         bytes impl = bytes4(keccak256("implementation()"));
         (bool success, bytes memory returndata) = address(_proxy).staticcall(hex"impl");    
 ```
+## Payable Access Control Functions Costs Less Gas
+Consider marking functions with access control as `payable`. This will save 20 gas on each call by their respective permissible callers for not needing to have the compiler check for `msg.value`. Here are some of the instances entailed:
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L109
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L121
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L164
