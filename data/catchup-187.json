@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "catchup",
+  "risk": "2",
+  "title": " Governor can approve many spenders to spend unlimited amount in ```BridgeEscrow``` contract",
+  "issueId": 187,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/187"
+}
