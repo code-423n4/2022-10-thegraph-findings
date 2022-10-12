@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "L2 GRAPH TOKEN CONTRACT AND L1 AND L2 GATEWAY CONTRACTS ARE NOT FULLY UPGRADEABLE BECAUSE `GraphTokenUpgradeable` AND `GraphTokenGateway` CONTRACTS DO NOT INCLUDE STORAGE GAPS",
+  "issueId": 244,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/244"
+}
