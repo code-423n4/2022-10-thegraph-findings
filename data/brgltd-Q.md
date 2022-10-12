@@ -117,7 +117,7 @@ https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1Gra
 
 Remove the `_from` argument, and include `escrow` in the event. 
 
-It's important to note that if the `escrow` is set incorrectly in `L1GraphTokenGateway.setEscrowAddress()`, it's possible to send funds from another contract to the `_to` address, resulting in a potential loss of funds on the hypethetical incorrect address setted as `escrow`.
+It's important to note that if the `escrow` is set incorrectly in `L1GraphTokenGateway.setEscrowAddress()`, it's possible to send funds from another contract to the `_to` address, resulting in a potential loss of funds on the hypothetical incorrect address setted as `escrow`.
 
 # [06] Usage of outdated OpenZeppelin libraries
 
