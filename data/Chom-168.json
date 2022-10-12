@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Chom",
+  "risk": "2",
+  "title": "GRT may be locked in the destination contract forever if the user or external developers bridge it to a contract that requires onTokenTransfer without sending data.",
+  "issueId": 168,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/168"
+}
