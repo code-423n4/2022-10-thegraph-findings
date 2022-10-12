@@ -6,5 +6,8 @@ https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/governance/Go
 
 When the governor is first set, it could happen that `_initGovernor` is `address(0)` which would lead to inability to change governor.
 
+Note: While this is an internal function, the caller of the function also does not check for 0 address.
+- https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L22
+
 Mitigation: 
 Add the following line: `require(_initGovernor) != address(0)`
