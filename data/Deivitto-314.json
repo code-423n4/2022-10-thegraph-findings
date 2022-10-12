@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Deivitto",
+  "risk": "2",
+  "title": "Missing 0 check can lead to unexpected behaviors",
+  "issueId": 314,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/314"
+}
