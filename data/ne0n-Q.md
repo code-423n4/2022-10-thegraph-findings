@@ -8,6 +8,7 @@ When the governor is first set, it could happen that `_initGovernor` is `address
 
 Note: While this is an internal function, the caller of the function also does not check for 0 address.
 - https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L22
+- https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L152
 
 Mitigation: 
 Add the following line: `require(_initGovernor) != address(0)`
