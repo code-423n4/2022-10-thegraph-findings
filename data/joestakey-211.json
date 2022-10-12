@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "joestakey",
+  "risk": "2",
+  "title": "Loss of 'msg.value' in `L1GraphTokenGateway.finalizeInboundTransfer()`",
+  "issueId": 211,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/211"
+}
