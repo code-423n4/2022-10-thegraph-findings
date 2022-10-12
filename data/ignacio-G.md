@@ -10,3 +10,7 @@ https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/Grap
 SPLITTING REQUIRE() STATEMENTS THAT USE && SAVES GAS
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L142
 https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L142
+# 4 ABI.ENCODE() IS LESS EFFICIENT THAN ABI.ENCODEPACKED()
+
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L88
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/l2/token/GraphTokenUpgradeable.sol#L162
