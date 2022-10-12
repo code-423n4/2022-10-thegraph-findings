@@ -7,3 +7,8 @@ Mitigation:
 `require(msg.sender == pendingGovernor, "Caller must be pending governor");`
 
 similarly change could be made for the following: https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L142
+
+2. Use <var> != 0 instead of <var> > 0 to save gas
+Since there is no concept of negative in EVM, one could save gas by replacing `<var> > 0` by `<var> != 0`
+
+Instance: https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/gateway/L1GraphTokenGateway.sol#L217
