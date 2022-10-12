@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "zzzitron",
+  "risk": "2",
+  "title": "`L1GraphTokenGateway` should not allow `l1Router` as `callhookWhitelist`",
+  "issueId": 198,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/198"
+}
