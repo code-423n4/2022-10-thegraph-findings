@@ -5,3 +5,5 @@ the require statement requires two conditions to be met. Instead of having just 
 Mitigation:
 `require(pendingGovernor != address(0), "pending governor address 0")`
 `require(msg.sender == pendingGovernor, "Caller must be pending governor");`
+
+similarly change could be made for the following: https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxy.sol#L142
