@@ -1,0 +1,1 @@
+1. In the function L2GraphTokenGateway.finalizeInboundTransfer() ,  local variable gatewayData is not used
