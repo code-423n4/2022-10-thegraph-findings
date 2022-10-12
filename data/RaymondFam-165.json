@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "RaymondFam",
+  "risk": "2",
+  "title": "Unpredictable Behavior for Users Due to Access Control Front Running or General Bad Timing",
+  "issueId": 165,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/165"
+}
