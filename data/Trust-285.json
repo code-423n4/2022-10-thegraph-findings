@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Trust",
+  "risk": "2",
+  "title": "Missing two step update mechanism for GraphProxy's ProxyAdmin may leave upgradeable contracts non-upgradeable",
+  "issueId": 285,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/285"
+}
