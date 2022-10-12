@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "0xNazgul",
+  "risk": "2",
+  "title": "[NAZ-M2] `MINTER_ROLE` Can Be Granted By The Deployer and Can Mint Arbitrary Amount of Tokens",
+  "issueId": 245,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/245"
+}
