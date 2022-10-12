@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "minhtrng",
+  "risk": "2",
+  "title": "Lack of gap variable in GraphTokenUpgradeable",
+  "issueId": 298,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/298"
+}
