@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "hansfriese",
+  "risk": "2",
+  "title": "Possible lost msg.value in `L1GraphTokenGateway.outboundTransfer()`.",
+  "issueId": 217,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/217"
+}
