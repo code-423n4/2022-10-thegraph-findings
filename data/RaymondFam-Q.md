@@ -43,4 +43,16 @@ https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/Grap
  @ send
  * like upgrading a contract or changing the admin needs to be send through
 ```
+## Commented Code
+Throughout the code base of `GraphProxyAdmin.sol`, there are lines of code that have been commented out with //. This can lead to confusion and is detrimental to overall code readability. 
 
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L32
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L45
+https://github.com/code-423n4/2022-10-thegraph/blob/main/contracts/upgrades/GraphProxyAdmin.sol#L57
+
+Consider removing/rewriting these commented out lines of code. Alternatively, have them incorporated into the code block to minimize human errors. For instance, lines 32 - 33 can be rewritten as:
+
+```
+        bytes impl = bytes4(keccak256("implementation()"));
+        (bool success, bytes memory returndata) = address(_proxy).staticcall(hex"impl");    
+```
