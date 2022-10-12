@@ -22,6 +22,30 @@ require(
 );
 ```
 
+## Can use modifier
+
+https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/l2/token/GraphTokenUpgradeable.sol#L59-L125
+
+Can update modifier onlyMinter contains params input, then we can reuse in function renounceMinter
+
+```solidity
+modifier onlyMinter(address _sender) {
+        require(isMinter(_sender), "Only minter can call");
+        _;
+    }
+```
+
+```solidity
+    function renounceMinter() external onlyMinter(msg.sender){
+        _removeMinter(msg.sender);
+    }
+
+    function mint(address _to, uint256 _amount) external onlyMinter(msg.sender) {
+        _mint(_to, _amount);
+    }
+```
+
+
 ##NON-LIBRARY/INTERFACE FILES SHOULD USE FIXED COMPILER VERSIONS, NOT FLOATING ONES
 
 https://github.com/code-423n4/2022-10-thegraph/blob/309a188f7215fa42c745b136357702400f91b4ff/contracts/gateway/BridgeEscrow.sol#L3
