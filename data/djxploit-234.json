@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "djxploit",
+  "risk": "3",
+  "title": "`transferfrom` with arbitrary `from` address allows attackers to receive tokens in L2 without paying",
+  "issueId": 234,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/234"
+}
