@@ -1,0 +1,8 @@
+{
+  "contest": 169,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "If L1GraphTokenGateway's outboundTransfer is called by a contract, the entire msg.value is blackholed, whether the ticket got redeemed or not.",
+  "issueId": 294,
+  "issueUrl": "https://github.com/code-423n4/2022-10-thegraph-findings/issues/294"
+}
