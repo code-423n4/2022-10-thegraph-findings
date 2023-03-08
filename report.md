@@ -1,3 +1,11 @@
+---
+sponsor: "The Graph"
+slug: "2022-10-thegraph"
+date: "2022-12-21"  # the date this report is published to the C4 website.
+title: "The Graph L2 bridge contest"
+findings: "https://github.com/code-423n4/2022-10-thegraph-findings/issues"
+contest: 169
+---
 
 # Overview
 
